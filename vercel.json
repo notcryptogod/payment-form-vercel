@@ -1,0 +1,31 @@
+{
+  "version": 2,
+  "name": "payment-form",
+  "builds": [
+    {
+      "src": "public/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "api/**/*.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/payment.html",
+      "dest": "/public/payment.html"
+    },
+    {
+      "src": "/",
+      "dest": "/public/payment.html"
+    },
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/$1"
+    }
+  ],
+  "env": {
+    "HCAPTCHA_SECRET": "@hcaptcha-secret"
+  }
+}

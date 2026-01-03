@@ -1,0 +1,17 @@
+{
+  "name": "payment-form",
+  "version": "1.0.0",
+  "description": "Payment form with Telegram integration and hCaptcha",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'No build required for static files'"
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.7",
+    "form-data": "^4.0.0"
+  },
+  "engines": {
+    "node": ">=18.x"
+  }
+}
