@@ -25,7 +25,4 @@
       "dest": "/api/$1"
     }
   ],
-  "env": {
-    "HCAPTCHA_SECRET": "@hcaptcha-secret"
-  }
 }
