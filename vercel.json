@@ -1,28 +1,12 @@
 {
-  "version": 2,
-  "name": "payment-form",
-  "builds": [
+  "rewrites": [
     {
-      "src": "public/**",
-      "use": "@vercel/static"
+      "source": "/",
+      "destination": "/public/payment.html"
     },
     {
-      "src": "api/**/*.js",
-      "use": "@vercel/node"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/payment.html",
-      "dest": "/public/payment.html"
-    },
-    {
-      "src": "/",
-      "dest": "/public/payment.html"
-    },
-    {
-      "src": "/api/(.*)",
-      "dest": "/api/$1"
+      "source": "/payment.html",
+      "destination": "/public/payment.html"
     }
   ]
 }
