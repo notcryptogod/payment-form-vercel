@@ -1,12 +1,9 @@
 {
-  "rewrites": [
+  "redirects": [
     {
       "source": "/",
-      "destination": "/public/payment.html"
-    },
-    {
-      "source": "/payment.html",
-      "destination": "/public/payment.html"
+      "destination": "/payment.html",
+      "permanent": false
     }
   ]
 }
