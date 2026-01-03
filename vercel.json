@@ -9,8 +9,7 @@
   "functions": {
     "api/submit.js": {
       "memory": 1024,
-      "maxDuration": 10,
-      "regions": ["iad1"]
+      "maxDuration": 10
     }
   }
 }
