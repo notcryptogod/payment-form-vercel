@@ -599,7 +599,7 @@
                         <span class="subscription-price">$250</span>
                     </div>
                 </div>
-                <input type="hidden" name="subscription_period" id="subscription_period" value="1">
+                <input type="hidden" name="subscription_period" id="subscription_period" value="Месячная">
                 <input type="hidden" name="subscription_price" id="subscription_price" value="36">
             </div>
 
@@ -700,7 +700,7 @@
                 this.classList.add('selected');
                 
                 // Сохраняем значения
-                const period = this.dataset.period;
+                const period = this.querySelector('.subscription-period').textContent;
                 const price = this.dataset.price;
                 document.getElementById('subscription_period').value = period;
                 document.getElementById('subscription_price').value = price;
@@ -825,7 +825,7 @@
             const data = {
                 telegram_username: document.getElementById('telegram_username').value,
                 discord_username: document.getElementById('discord_username').value,
-                subscription_period: document.getElementById('subscription_period').value + ' месяцев',
+                subscription_period: document.getElementById('subscription_period').value,
                 subscription_price: '$' + document.getElementById('subscription_price').value,
                 file: fileBase64 ? {
                     name: fileName,
