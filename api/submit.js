@@ -108,15 +108,15 @@ export default async function handler(req, res) {
           timeZone: 'Europe/Kiev'
         });
         
-        // Формируем сообщение
-        const message = `💰 *Новая заявка на оплату!*
+        // Формируем сообщение БЕЗ Markdown (чтобы избежать ошибок парсинга)
+        const message = `💰 Новая заявка на оплату!
 
-📱 *Telegram:* ${telegram_username}
-🎮 *Discord:* ${discord_username}
-📅 *Период:* ${subscription_period}
-💵 *Цена:* ${subscription_price}
+📱 Telegram: ${telegram_username}
+🎮 Discord: ${discord_username}
+📅 Период: ${subscription_period}
+💵 Цена: ${subscription_price}
 
-⏰ *Дата:* ${kyivTime}`;
+⏰ Дата: ${kyivTime}`;
 
         // Отправляем фото с подписью в Telegram
         const telegramForm = new FormData();
@@ -126,7 +126,7 @@ export default async function handler(req, res) {
           contentType: file.type
         });
         telegramForm.append('caption', message);
-        telegramForm.append('parse_mode', 'Markdown');
+        // Убрали parse_mode - теперь обычный текст без Markdown
 
         const telegramResponse = await fetch(
           `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendPhoto`,
